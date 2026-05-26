@@ -2,11 +2,11 @@
  * ModuleSideNav.controller.js
  *
  * 역할:
- * - 왼쪽 모듈별 탭(사이드 메뉴)을 담당한다.
+ * - 왼쪽 모듈별 사이드 메뉴를 담당한다.
  *
  * 주요 기능:
  * - SD, MM, PP 등 모듈 목록 표시
- * - 모듈 선택 시 dashboard 모델 업데이트
+ * - 모듈 선택 시 dashboard 공유 모델 업데이트
  */
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
@@ -14,15 +14,13 @@ sap.ui.define([
 ], function (Controller, DashboardHelper) {
     "use strict";
 
-    return Controller.extend("sappas.processdashboard.controller.module.ModuleSideNav", {
-        /**
-         * 초기 선택 모듈을 리스트에 반영한다.
-         */
+    return Controller.extend("sappas.processdashboard.controller.features.ModuleSideNav", {
         onInit: function () {
             var oDashboardModel = DashboardHelper.getDashboardModel(this);
             this.getView().setModel(oDashboardModel, "dashboard");
 
-            oDashboardModel.attachPropertyChange(this._syncModuleSelection.bind(this));
+            this._fnSyncModuleSelection = this._syncModuleSelection.bind(this);
+            oDashboardModel.attachPropertyChange(this._fnSyncModuleSelection);
             this._syncModuleSelection();
         },
 
@@ -65,8 +63,8 @@ sap.ui.define([
 
         onExit: function () {
             var oDashboardModel = DashboardHelper.getDashboardModel(this);
-            if (oDashboardModel) {
-                oDashboardModel.detachPropertyChange(this._syncModuleSelection.bind(this));
+            if (oDashboardModel && this._fnSyncModuleSelection) {
+                oDashboardModel.detachPropertyChange(this._fnSyncModuleSelection);
             }
         }
     });

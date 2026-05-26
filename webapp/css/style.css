@@ -93,6 +93,16 @@
     min-height: 10rem;
 }
 
+.sappasReportArea {
+    flex: 1;
+    min-height: 12rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.sappasFeaturePanel {
+    border-bottom: 1px solid #f0f0f0;
+}
+
 .sappasPlaceholderBox {
     display: flex;
     align-items: center;

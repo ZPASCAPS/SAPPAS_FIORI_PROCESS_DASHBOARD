@@ -1,0 +1,17 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="sappas.processdashboard.controller.features.InventoryStatus"
+    height="100%">
+    <VBox height="100%" class="sappasPanel sappasFeaturePanel">
+        <VBox class="sappasPanelHeader">
+            <Title text="Inventory Status" level="H5" class="sappasPanelTitle" />
+            <Text text="재고 현황 리포트" class="sappasPanelSubtitle" />
+        </VBox>
+        <VBox class="sappasPanelContent">
+            <VBox class="sappasPlaceholderBox">
+                <Text text="재고 현황 데이터가 이 영역에 표시됩니다." />
+            </VBox>
+        </VBox>
+    </VBox>
+</mvc:View>

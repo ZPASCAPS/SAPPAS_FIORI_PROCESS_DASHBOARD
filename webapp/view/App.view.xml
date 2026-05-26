@@ -1,7 +1,0 @@
-<mvc:View
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    controllerName="sappas.processdashboard.controller.App"
-    displayBlock="true">
-    <App id="appNavContainer" class="sappasAppPage" />
-</mvc:View>

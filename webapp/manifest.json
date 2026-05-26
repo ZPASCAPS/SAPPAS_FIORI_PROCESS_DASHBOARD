@@ -20,10 +20,10 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "sappas.processdashboard.view.App",
+      "viewName": "sappas.processdashboard.view.Main",
       "type": "XML",
       "async": true,
-      "id": "app"
+      "id": "main"
     },
     "dependencies": {
       "minUI5Version": "1.108.0",
@@ -40,31 +40,6 @@
           "uri": "css/style.css"
         }
       ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "sappas.processdashboard.view",
-        "controlId": "appNavContainer",
-        "controlAggregation": "pages",
-        "transition": "show"
-      },
-      "routes": [
-        {
-          "name": "main",
-          "pattern": "",
-          "target": "mainDashboard"
-        }
-      ],
-      "targets": {
-        "mainDashboard": {
-          "viewName": "MainDashboard",
-          "viewId": "mainDashboard",
-          "viewLevel": 1
-        }
-      }
     }
   }
 }

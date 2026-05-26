@@ -1,7 +1,7 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    controllerName="sappas.processdashboard.controller.module.ModuleSideNav"
+    controllerName="sappas.processdashboard.controller.features.ModuleSideNav"
     height="100%">
     <VBox height="100%" class="sappasPanel">
         <VBox class="sappasPanelHeader">
