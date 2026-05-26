@@ -2,11 +2,11 @@
  * ProcessFlow.controller.js
  *
  * 역할:
- * - 중앙 SAP 업무 프로세스 순서도를 표시한다.
+ * - 중앙 SAP 업무 프로세스 순서도와 선택 항목 상세 정보를 표시한다.
  *
  * 주요 기능:
  * - 선택된 모듈에 맞는 프로세스 단계를 가로 순서도로 렌더링
- * - 프로세스 단계 클릭 시 DetailPanel 연동
+ * - 프로세스 단계 클릭 시 dashboard 공유 모델의 상세 정보 갱신
  */
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
@@ -14,12 +14,13 @@ sap.ui.define([
 ], function (Controller, DashboardHelper) {
     "use strict";
 
-    return Controller.extend("sappas.processdashboard.controller.process.ProcessFlow", {
+    return Controller.extend("sappas.processdashboard.controller.features.ProcessFlow", {
         onInit: function () {
             var oDashboardModel = DashboardHelper.getDashboardModel(this);
             this.getView().setModel(oDashboardModel, "dashboard");
 
-            oDashboardModel.attachPropertyChange(this._onDashboardChange.bind(this));
+            this._fnOnDashboardChange = this._onDashboardChange.bind(this);
+            oDashboardModel.attachPropertyChange(this._fnOnDashboardChange);
             this._refreshProcessSteps();
         },
 
@@ -69,8 +70,8 @@ sap.ui.define([
 
         onExit: function () {
             var oDashboardModel = DashboardHelper.getDashboardModel(this);
-            if (oDashboardModel) {
-                oDashboardModel.detachPropertyChange(this._onDashboardChange.bind(this));
+            if (oDashboardModel && this._fnOnDashboardChange) {
+                oDashboardModel.detachPropertyChange(this._fnOnDashboardChange);
             }
         }
     });

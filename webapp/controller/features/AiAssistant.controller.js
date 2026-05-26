@@ -1,8 +1,8 @@
 /**
- * ChatbotPanel.controller.js
+ * AiAssistant.controller.js
  *
  * 역할:
- * - 오른쪽 챗봇(AI Assistant) 패널을 담당한다.
+ * - 오른쪽 AI Assistant(챗봇) 패널을 담당한다.
  *
  * 주요 기능:
  * - 사용자 메시지 입력 및 더미 응답 표시
@@ -14,7 +14,7 @@ sap.ui.define([
 ], function (Controller, DashboardHelper) {
     "use strict";
 
-    return Controller.extend("sappas.processdashboard.controller.chatbot.ChatbotPanel", {
+    return Controller.extend("sappas.processdashboard.controller.features.AiAssistant", {
         onInit: function () {
             var oDashboardModel = DashboardHelper.getDashboardModel(this);
             this.getView().setModel(oDashboardModel, "dashboard");

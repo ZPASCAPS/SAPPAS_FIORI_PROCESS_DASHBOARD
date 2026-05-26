@@ -2,7 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    controllerName="sappas.processdashboard.controller.process.ProcessFlow"
+    controllerName="sappas.processdashboard.controller.features.ProcessFlow"
     height="100%">
     <VBox height="100%" class="sappasPanel">
         <VBox class="sappasPanelHeader">
@@ -10,7 +10,7 @@
             <Text text="{dashboard>/detailTitle} 업무 순서" class="sappasPanelSubtitle" />
         </VBox>
         <ScrollContainer
-            height="100%"
+            height="55%"
             width="100%"
             horizontal="true"
             vertical="false"
@@ -21,9 +21,7 @@
                 items="{dashboard>/currentProcessSteps}">
                 <items>
                     <HBox alignItems="Center">
-                        <VBox
-                            class="sappasProcessStep"
-                            alignItems="Center">
+                        <VBox class="sappasProcessStep" alignItems="Center">
                             <core:Icon
                                 src="sap-icon://process"
                                 size="1.25rem"
@@ -46,5 +44,16 @@
                 </items>
             </HBox>
         </ScrollContainer>
+        <VBox class="sappasPanelHeader">
+            <Title text="상세 정보" level="H5" class="sappasPanelTitle" />
+            <Text text="선택된 모듈 또는 프로세스 단계" class="sappasPanelSubtitle" />
+        </VBox>
+        <VBox class="sappasPanelContent" height="45%">
+            <Title text="{dashboard>/detailTitle}" level="H5" />
+            <Text text="{dashboard>/detailDescription}" class="sapUiSmallMarginTop" />
+            <VBox class="sappasPlaceholderBox sapUiSmallMarginTop">
+                <Text text="선택된 항목의 상세 데이터가 이 영역에 표시됩니다." />
+            </VBox>
+        </VBox>
     </VBox>
 </mvc:View>

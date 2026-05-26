@@ -1,12 +1,11 @@
 <mvc:View
+    controllerName="sappas.processdashboard.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    controllerName="sappas.processdashboard.controller.MainDashboard"
     displayBlock="true">
     <Page
-        id="mainDashboardPage"
-        title="SAP Process Dashboard"
+        id="mainPage"
         showNavButton="false"
         class="sappasMainPage"
         backgroundDesign="Solid">
@@ -28,24 +27,30 @@
                 class="sappasDashboardLayout">
                 <VBox class="sappasPanel sappasPanel--left" height="100%">
                     <mvc:XMLView
-                        viewName="sappas.processdashboard.view.module.ModuleSideNav"
+                        viewName="sappas.processdashboard.view.features.ModuleSideNav"
                         height="100%" />
                 </VBox>
                 <VBox class="sappasPanel sappasPanel--center sappasCenterStack" height="100%">
-                    <VBox class="sappasProcessArea" height="55%">
+                    <VBox class="sappasProcessArea" height="40%">
                         <mvc:XMLView
-                            viewName="sappas.processdashboard.view.process.ProcessFlow"
+                            viewName="sappas.processdashboard.view.features.ProcessFlow"
                             height="100%" />
                     </VBox>
-                    <VBox class="sappasDetailArea" height="45%">
+                    <VBox class="sappasReportArea" height="60%">
                         <mvc:XMLView
-                            viewName="sappas.processdashboard.view.process.DetailPanel"
-                            height="100%" />
+                            viewName="sappas.processdashboard.view.features.InventoryStatus"
+                            height="33%" />
+                        <mvc:XMLView
+                            viewName="sappas.processdashboard.view.features.OrderImpact"
+                            height="33%" />
+                        <mvc:XMLView
+                            viewName="sappas.processdashboard.view.features.MaterialShortage"
+                            height="34%" />
                     </VBox>
                 </VBox>
                 <VBox class="sappasPanel sappasPanel--right" height="100%">
                     <mvc:XMLView
-                        viewName="sappas.processdashboard.view.chatbot.ChatbotPanel"
+                        viewName="sappas.processdashboard.view.features.AiAssistant"
                         height="100%" />
                 </VBox>
             </HBox>
