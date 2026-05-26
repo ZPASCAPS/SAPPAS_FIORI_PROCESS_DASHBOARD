@@ -1,0 +1,70 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "sappas.processdashboard",
+    "type": "application",
+    "i18n": "",
+    "title": "SAP Process Dashboard",
+    "description": "SAP Fiori 통합 업무 프로세스 대시보드",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": false
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sappas.processdashboard.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "models": {},
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sappas.processdashboard.view",
+        "controlId": "appNavContainer",
+        "controlAggregation": "pages",
+        "transition": "show"
+      },
+      "routes": [
+        {
+          "name": "main",
+          "pattern": "",
+          "target": "mainDashboard"
+        }
+      ],
+      "targets": {
+        "mainDashboard": {
+          "viewName": "MainDashboard",
+          "viewId": "mainDashboard",
+          "viewLevel": 1
+        }
+      }
+    }
+  }
+}

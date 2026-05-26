@@ -1,0 +1,13 @@
+specVersion: "3.1"
+metadata:
+  name: sappas-fiori-process-dashboard
+type: application
+framework:
+  name: OpenUI5
+  version: "1.120.0"
+  libraries:
+    - name: sap.m
+    - name: sap.f
+    - name: sap.ui.layout
+server:
+  customMiddleware: []

@@ -1,0 +1,11 @@
+{
+  "name": "sappas-fiori-process-dashboard",
+  "version": "1.0.0",
+  "description": "SAP Fiori 통합 프로세스 대시보드",
+  "scripts": {
+    "start": "ui5 serve --open index.html"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.0.53"
+  }
+}

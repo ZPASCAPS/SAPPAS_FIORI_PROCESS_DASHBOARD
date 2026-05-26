@@ -1,0 +1,166 @@
+/**
+ * style.css
+ *
+ * 역할:
+ * - Fiori 하얀색 백지 스타일의 대시보드 레이아웃 CSS를 정의한다.
+ */
+
+.sappasBody,
+.sappasBody .sapUiBody {
+    background-color: #ffffff;
+}
+
+.sappasAppPage {
+    background-color: #ffffff !important;
+}
+
+.sappasAppPage .sapMPageEnableScrolling {
+    background-color: #ffffff;
+}
+
+.sappasMainPage {
+    background-color: #ffffff !important;
+}
+
+.sappasMainPage .sapMPageContent {
+    padding: 0;
+}
+
+.sappasDashboardLayout {
+    height: 100%;
+    min-height: calc(100vh - 3rem);
+    background-color: #ffffff;
+}
+
+.sappasPanel {
+    background-color: #ffffff;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.sappasPanel--left {
+    width: 16rem;
+    min-width: 16rem;
+    border-right: 1px solid #e5e5e5;
+}
+
+.sappasPanel--center {
+    flex: 1;
+    min-width: 0;
+    border-right: 1px solid #e5e5e5;
+}
+
+.sappasPanel--right {
+    width: 20rem;
+    min-width: 20rem;
+}
+
+.sappasPanelHeader {
+    padding: 1rem 1rem 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+
+.sappasPanelTitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #32363a;
+}
+
+.sappasPanelSubtitle {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #6a6d70;
+}
+
+.sappasPanelContent {
+    padding: 0.75rem;
+    background-color: #ffffff;
+}
+
+.sappasCenterStack {
+    height: 100%;
+}
+
+.sappasProcessArea {
+    flex: 1;
+    min-height: 14rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sappasDetailArea {
+    flex: 1;
+    min-height: 10rem;
+}
+
+.sappasPlaceholderBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem;
+    border: 1px dashed #d9d9d9;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    color: #6a6d70;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.sappasModuleList .sapMLIB {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.sappasModuleList .sapMLIBSelected {
+    background-color: #f7f7f7;
+}
+
+.sappasChatInputArea {
+    padding: 0.75rem;
+    border-top: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+
+.sappasChatMessages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.75rem;
+    background-color: #ffffff;
+}
+
+.sappasChatMessage {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+}
+
+.sappasChatMessage--bot {
+    background-color: #f7f7f7;
+    color: #32363a;
+}
+
+.sappasChatMessage--user {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    color: #32363a;
+}
+
+.sappasProcessStep {
+    min-width: 7rem;
+    padding: 0.75rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    margin: 0.25rem;
+}
+
+.sappasProcessStepLink {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+}
+
+.sappasProcessArrow {
+    margin: 0 0.5rem;
+}

@@ -1,0 +1,25 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="sappas.processdashboard.controller.module.ModuleSideNav"
+    height="100%">
+    <VBox height="100%" class="sappasPanel">
+        <VBox class="sappasPanelHeader">
+            <Title text="모듈" level="H5" class="sappasPanelTitle" />
+            <Text text="업무 영역을 선택하세요" class="sappasPanelSubtitle" />
+        </VBox>
+        <List
+            id="moduleList"
+            class="sappasModuleList"
+            mode="SingleSelectMaster"
+            includeItemInSelection="true"
+            items="{dashboard>/modules}"
+            selectionChange="onModuleSelect">
+            <StandardListItem
+                title="{dashboard>title}"
+                description="{dashboard>subtitle}"
+                icon="{dashboard>icon}"
+                type="Active" />
+        </List>
+    </VBox>
+</mvc:View>

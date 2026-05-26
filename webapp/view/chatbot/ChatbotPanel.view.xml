@@ -1,0 +1,38 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="sappas.processdashboard.controller.chatbot.ChatbotPanel"
+    height="100%">
+    <VBox height="100%" class="sappasPanel">
+        <VBox class="sappasPanelHeader">
+            <Title text="AI Assistant" level="H5" class="sappasPanelTitle" />
+            <Text text="SAP 업무 프로세스 질의" class="sappasPanelSubtitle" />
+        </VBox>
+        <ScrollContainer
+            height="100%"
+            width="100%"
+            vertical="true"
+            class="sappasChatMessages">
+            <VBox items="{dashboard>/chatMessages}">
+                <VBox
+                    class="{= ${dashboard>sender} === 'bot' ? 'sappasChatMessage sappasChatMessage--bot' : 'sappasChatMessage sappasChatMessage--user' }">
+                    <Text text="{dashboard>text}" />
+                </VBox>
+            </VBox>
+        </ScrollContainer>
+        <VBox class="sappasChatInputArea">
+            <TextArea
+                id="chatInput"
+                value="{dashboard>/chatInput}"
+                rows="3"
+                width="100%"
+                placeholder="질문을 입력하세요..." />
+            <Button
+                text="전송"
+                type="Emphasized"
+                class="sapUiTinyMarginTop"
+                press="onSendMessage"
+                width="100%" />
+        </VBox>
+    </VBox>
+</mvc:View>

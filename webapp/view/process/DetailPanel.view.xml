@@ -1,0 +1,19 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="sappas.processdashboard.controller.process.DetailPanel"
+    height="100%">
+    <VBox height="100%" class="sappasPanel">
+        <VBox class="sappasPanelHeader">
+            <Title text="상세 정보" level="H5" class="sappasPanelTitle" />
+            <Text text="선택된 모듈 또는 프로세스 단계" class="sappasPanelSubtitle" />
+        </VBox>
+        <VBox class="sappasPanelContent" height="100%">
+            <Title text="{dashboard>/detailTitle}" level="H5" />
+            <Text text="{dashboard>/detailDescription}" class="sapUiSmallMarginTop" />
+            <VBox class="sappasPlaceholderBox sapUiMediumMarginTop">
+                <Text text="선택된 항목의 상세 데이터가 이 영역에 표시됩니다." />
+            </VBox>
+        </VBox>
+    </VBox>
+</mvc:View>

@@ -1,0 +1,50 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="sappas.processdashboard.controller.process.ProcessFlow"
+    height="100%">
+    <VBox height="100%" class="sappasPanel">
+        <VBox class="sappasPanelHeader">
+            <Title text="프로세스 흐름" level="H5" class="sappasPanelTitle" />
+            <Text text="{dashboard>/detailTitle} 업무 순서" class="sappasPanelSubtitle" />
+        </VBox>
+        <ScrollContainer
+            height="100%"
+            width="100%"
+            horizontal="true"
+            vertical="false"
+            class="sappasPanelContent">
+            <HBox
+                id="processStepBox"
+                alignItems="Center"
+                items="{dashboard>/currentProcessSteps}">
+                <items>
+                    <HBox alignItems="Center">
+                        <VBox
+                            class="sappasProcessStep"
+                            alignItems="Center">
+                            <core:Icon
+                                src="sap-icon://process"
+                                size="1.25rem"
+                                color="{= ${>state} === 'Positive' ? '#107E3E' : '#6A6D70' }" />
+                            <Link
+                                text="{>title}"
+                                press="onStepPress"
+                                class="sappasProcessStepLink" />
+                            <ObjectStatus
+                                text="{>id}"
+                                state="{= ${>state} === 'Positive' ? 'Success' : 'None' }" />
+                        </VBox>
+                        <core:Icon
+                            src="sap-icon://arrow-right"
+                            size="1rem"
+                            color="#BFBFBF"
+                            visible="{= ${>isLast} !== true }"
+                            class="sappasProcessArrow" />
+                    </HBox>
+                </items>
+            </HBox>
+        </ScrollContainer>
+    </VBox>
+</mvc:View>
